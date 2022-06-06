@@ -221,7 +221,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return mTitleText;
     }
 
-    public com.mct.materialdialog.MaterialDialog setTitleText (String text) {
+    public MaterialDialog setTitleText (String text) {
         mTitleText = text;
         if (mTitleTextView != null && mTitleText != null) {
             mTitleTextView.setText(mTitleText);
@@ -229,7 +229,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return this;
     }
 
-    public com.mct.materialdialog.MaterialDialog setCustomImage (Drawable drawable) {
+    public MaterialDialog setCustomImage (Drawable drawable) {
         mCustomImgDrawable = drawable;
         if (mCustomImage != null && mCustomImgDrawable != null) {
             mCustomImage.setVisibility(View.VISIBLE);
@@ -238,7 +238,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return this;
     }
 
-    public com.mct.materialdialog.MaterialDialog setCustomImage (int resourceId) {
+    public MaterialDialog setCustomImage (int resourceId) {
         return setCustomImage(getContext().getResources().getDrawable(resourceId));
     }
 
@@ -246,7 +246,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return mContentText;
     }
 
-    public com.mct.materialdialog.MaterialDialog setContentText (String text) {
+    public MaterialDialog setContentText (String text) {
         mContentText = text;
         if (mContentTextView != null && mContentText != null) {
             showContentText(true);
@@ -259,7 +259,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return mShowCancel;
     }
 
-    public com.mct.materialdialog.MaterialDialog showCancelButton (boolean isShow) {
+    public MaterialDialog showCancelButton (boolean isShow) {
         mShowCancel = isShow;
         if (mCancelButton != null) {
             mCancelButton.setVisibility(mShowCancel ? View.VISIBLE : View.GONE);
@@ -271,7 +271,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return mShowContent;
     }
 
-    public com.mct.materialdialog.MaterialDialog showContentText (boolean isShow) {
+    public MaterialDialog showContentText (boolean isShow) {
         mShowContent = isShow;
         if (mContentTextView != null) {
             mContentTextView.setVisibility(mShowContent ? View.VISIBLE : View.GONE);
@@ -283,7 +283,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return mCancelText;
     }
 
-    public com.mct.materialdialog.MaterialDialog setCancelText (String text) {
+    public MaterialDialog setCancelText (String text) {
         mCancelText = text;
         if (mCancelButton != null && mCancelText != null) {
             showCancelButton(true);
@@ -296,7 +296,7 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return mConfirmText;
     }
 
-    public com.mct.materialdialog.MaterialDialog setConfirmText (String text) {
+    public MaterialDialog setConfirmText (String text) {
         mConfirmText = text;
         if (mConfirmButton != null && mConfirmText != null) {
             mConfirmButton.setText(mConfirmText);
@@ -304,12 +304,12 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return this;
     }
 
-    public com.mct.materialdialog.MaterialDialog setCancelClickListener (OnClickListener listener) {
+    public MaterialDialog setCancelClickListener (OnClickListener listener) {
         mCancelClickListener = listener;
         return this;
     }
 
-    public com.mct.materialdialog.MaterialDialog setConfirmClickListener (OnClickListener listener) {
+    public MaterialDialog setConfirmClickListener (OnClickListener listener) {
         mConfirmClickListener = listener;
         return this;
     }
@@ -344,13 +344,13 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
     public void onClick(@NonNull View v) {
         if (v.getId() == R.id.cancel_button) {
             if (mCancelClickListener != null) {
-                mCancelClickListener.onClick(com.mct.materialdialog.MaterialDialog.this);
+                mCancelClickListener.onClick(this);
             } else {
                 dismissWithAnimation();
             }
         } else if (v.getId() == R.id.confirm_button) {
             if (mConfirmClickListener != null) {
-                mConfirmClickListener.onClick(com.mct.materialdialog.MaterialDialog.this);
+                mConfirmClickListener.onClick(this);
             } else {
                 dismissWithAnimation();
             }

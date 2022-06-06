@@ -156,6 +156,7 @@
         <Button
             android:id="@+id/confirm_button"
             style="@style/dialog_blue_button"
+            android:background="@drawable/blue_button_background"
             android:text="@string/dialog_ok" />
     </LinearLayout>
 </LinearLayout><!-- From: file:/F:/as-projects/sweet-alert-dialog/library/src/main/res/layout/alert_dialog.xml -->
