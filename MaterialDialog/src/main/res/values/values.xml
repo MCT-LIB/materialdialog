@@ -55,7 +55,7 @@
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="dialog_ok">OK</string>
 
-    <style name="alert_dialog" parent="android:Theme.Dialog">
+    <style name="alert_dialog">
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowNoTitle">true</item>
@@ -66,7 +66,7 @@
         <item name="android:backgroundDimAmount">0.4</item>
     </style>
 
-    <style name="dialog_blue_button" >
+    <style name="dialog_blue_button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">32dp</item>
         <item name="android:background">@drawable/blue_button_background</item>

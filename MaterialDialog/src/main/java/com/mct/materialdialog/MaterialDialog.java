@@ -48,8 +48,8 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
     private Button mCancelButton;
     private final ProgressHelper mProgressHelper;
     private FrameLayout mWarningFrame;
-    private OnSweetClickListener mCancelClickListener;
-    private OnSweetClickListener mConfirmClickListener;
+    private OnClickListener mCancelClickListener;
+    private OnClickListener mConfirmClickListener;
     private boolean mCloseFromCancel;
 
     public static final int NORMAL_TYPE = 0;
@@ -59,8 +59,8 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
     public static final int CUSTOM_IMAGE_TYPE = 4;
     public static final int PROGRESS_TYPE = 5;
 
-    public interface OnSweetClickListener {
-        void onClick(com.mct.materialdialog.MaterialDialog materialDialog);
+    public interface OnClickListener {
+        void onClick(MaterialDialog materialDialog);
     }
 
     public MaterialDialog(Context context) {
@@ -304,12 +304,12 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
         return this;
     }
 
-    public com.mct.materialdialog.MaterialDialog setCancelClickListener (OnSweetClickListener listener) {
+    public com.mct.materialdialog.MaterialDialog setCancelClickListener (OnClickListener listener) {
         mCancelClickListener = listener;
         return this;
     }
 
-    public com.mct.materialdialog.MaterialDialog setConfirmClickListener (OnSweetClickListener listener) {
+    public com.mct.materialdialog.MaterialDialog setConfirmClickListener (OnClickListener listener) {
         mConfirmClickListener = listener;
         return this;
     }
