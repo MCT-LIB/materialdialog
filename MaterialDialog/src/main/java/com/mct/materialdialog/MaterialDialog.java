@@ -92,9 +92,9 @@ public class MaterialDialog extends Dialog implements View.OnClickListener {
                 mDialogView.setVisibility(View.GONE);
                 mDialogView.post(() -> {
                     if (mCloseFromCancel) {
-                        com.mct.materialdialog.MaterialDialog.super.cancel();
+                        cancel();
                     } else {
-                        com.mct.materialdialog.MaterialDialog.super.dismiss();
+                        dismiss();
                     }
                 });
             }
